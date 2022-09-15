@@ -19,7 +19,10 @@ import logo from './src/assets/divan-grill.jpeg';
 const DrawerRouter = props => {
   return (
     <SafeAreaView style={{flex: 1}}>
+      <View style={styles.imageContainer}>
+
       <Image source={logo} style={styles.sideMenuProfileIcon} />
+      </View>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <DrawerItem
@@ -49,12 +52,17 @@ const DrawerRouter = props => {
 };
 
 const styles = StyleSheet.create({
-  sideMenuProfileIcon: {
-    resizeMode: 'center',
-    width: 100,
+  imageContainer:{
+    width: 150,
     height: 100,
-    borderRadius: 100 / 2,
     alignSelf: 'center',
+
+  },
+  sideMenuProfileIcon: {
+    resizeMode:"cover",
+    borderRadius: 8,
+    width: "90%",
+    height: "90%",
     marginTop:7
   },
   iconStyle: {

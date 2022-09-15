@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { View, TouchableOpacity, Image,Text,SafeAreaView } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import {View, TouchableOpacity, Image, Text, SafeAreaView} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import Home from './src/pages/Home';
 import Product from './src/pages/Product';
 import DrawerRouter from './DrawerRouter';
 import Navbar from './src/components/Navbar';
-import { Announcement } from './src/components/Announcement';
-
+import {Announcement} from './src/components/Announcement';
 
 // const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -90,43 +89,33 @@ const Drawer = createDrawerNavigator();
 
 function App() {
   return (
-      
     <NavigationContainer>
       <SafeAreaView>
-
-      
-      <Announcement/>
-    <Navbar/>
+        <Announcement />
+        <Navbar />
       </SafeAreaView>
       <Drawer.Navigator
-      initialRouteName='Home'
+        initialRouteName="Home"
         screenOptions={{
           activeTintColor: '#e91e63',
-          itemStyle: { marginVertical: 5 },
-        //  drawerHideStatusBarOnOpen:true,
-         headerShown:false
-         
-         
+          itemStyle: {marginVertical: 5},
+          //  drawerHideStatusBarOnOpen:true,
+          headerShown: false,
         }}
-        drawerContent={(props) => <DrawerRouter {...props} />}>
+        drawerContent={props => <DrawerRouter {...props} />}>
         <Drawer.Screen
           name="Divan Grill"
-          options={{ drawerLabel: 'Home' }}
+          options={{drawerLabel: 'Home'}}
           component={Home}
-        
-          
         />
         <Drawer.Screen
           name="Product"
-          options={{ drawerLabel: 'Product' }}
+          options={{drawerLabel: 'Product'}}
           component={Product}
         />
       </Drawer.Navigator>
-      
     </NavigationContainer>
-      
   );
 }
 
 export default App;
-
